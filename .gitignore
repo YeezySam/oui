@@ -1,0 +1,15 @@
+# Frontend
+client/node_modules
+client/dist
+
+# Backend
+server/node_modules
+
+# Global
+.env
+.DS_Store
+
+node_modules/
+.env
+.DS_Store
+
