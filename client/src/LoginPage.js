@@ -26,7 +26,7 @@ const LoginPage = () => {
       <div className="bg-white bg-opacity-10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 w-full max-w-lg animate-fade-in">
 
         <h2 className="text-3xl font-bold text-white text-center mb-8 drop-shadow-md">
-          Connexion
+          ENREGISTREMENT
         </h2>
 
         <form className="space-y-6 text-white" onSubmit={handleSubmit}>
@@ -65,9 +65,9 @@ const LoginPage = () => {
             />
           </div>
 
-          {/* Poste au CENADI */}
+          {/* Mot de passe */}
           <div>
-            <label className="block text-sm font-medium mb-1">Poste au CENADI</label>
+            <label className="block text-sm font-medium mb-1">Mot de passe</label>
             <input
               type="text"
               className="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 placeholder-white focus:outline-none focus:ring-2 focus:ring-blue-300"

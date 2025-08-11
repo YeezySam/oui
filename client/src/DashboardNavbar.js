@@ -7,7 +7,7 @@ const DashboardNavbar = () => {
   const prenom = location.state?.prenom || 'Utilisateur';
 
   return (
-    <nav className="bg-black bg-opacity-70 text-white px-6 py-4 flex items-center justify-between shadow-md">
+    <nav className="bg-green bg-opacity-70 text-white px-6 py-4 flex items-center justify-between shadow-md">
       
       {/* Partie gauche : Logo + Titre */}
       <div className="flex items-center gap-3">

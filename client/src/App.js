@@ -5,16 +5,34 @@ import Navbar from './Navbar';
 import DashboardNavbar from './DashboardNavbar';
 import LoginPage from './LoginPage';
 import Dashboard from './Dashboard';
-
+import AuthPage from './pages/AuthPage'; // Nouvelle page connexion
 
 function Layout() {
   const location = useLocation();
-  const isDashboard = location.pathname === '/dashboard';
+  const path = location.pathname;
+
+  if (path === '/dashboard') {
+    return (
+      <>
+        <DashboardNavbar />
+        <Dashboard />
+      </>
+    );
+  }
+
+  if (path === '/auth') {
+    return (
+      <>
+        <Navbar />
+        <AuthPage />
+      </>
+    );
+  }
 
   return (
     <>
-      {isDashboard ? <DashboardNavbar /> : <Navbar />}
-      {isDashboard ? <Dashboard /> : <LoginPage />}
+      <Navbar />
+      <LoginPage />
     </>
   );
 }
@@ -25,7 +43,7 @@ function App() {
       <div
         className="min-h-screen bg-cover bg-center relative"
         style={{
-          backgroundImage: "url('/images/pexels-823sl-2294361-copy.jpg.jpg')",
+          backgroundImage: "url('/assets/pexels-ketut-subiyanto-5038876 copy.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-opacity-60 backdrop-blur-sm"></div>
