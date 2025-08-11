@@ -69,9 +69,9 @@ const LoginPage = () => {
           <div>
             <label className="block text-sm font-medium mb-1">Mot de passe</label>
             <input
-              type="text"
+              type="password"
               className="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 placeholder-white focus:outline-none focus:ring-2 focus:ring-blue-300"
-              placeholder="Votre poste"
+              placeholder="Votre mot de passe"
               required
             />
           </div>
