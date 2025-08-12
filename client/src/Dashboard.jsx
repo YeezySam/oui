@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SectionCard from "./components/SectionCard";
 import DashboardNavbar from './DashboardNavbar';
+import SectionCard from "./components/SectionCard";
 
 const sections = [
   {
@@ -25,48 +25,38 @@ const sections = [
 ];
 
 const Dashboard = () => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [activeSection, setActiveSection] = useState('Sections');
 
   return (
-    <div className="flex-1 p-8 bg-green-300 min-h-screen">
-      <DashboardNavbar/>
-      <div className="pt-20">
-      <div className="flex justify-between items-center mb-6">
-        <div className="relative">
-          <button
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            onMouseEnter={() => setIsSidebarVisible(true)}
-            onMouseLeave={() => setIsSidebarVisible(false)}
-          >
-            Menu Dashboard
+    <div className="flex h-screen bg-gray-100">
+      <DashboardNavbar />
+
+      {/* Sidebar */}
+      <div className="w-64 bg-white shadow-md p-4">
+        <h2 className="text-xl font-bold mb-4">DASHBOARD</h2>
+        <ul>
+          <li className={`py-2 ${activeSection === 'Sections' ? 'text-blue-500' : ''}`} onClick={() => setActiveSection('Sections')}>Sections</li>
+          <li className={`py-2 ${activeSection === 'Images' ? 'text-blue-500' : ''}`} onClick={() => setActiveSection('Images')}>Images</li>
+          <li className={`py-2 ${activeSection === 'Apparence' ? 'text-blue-500' : ''}`} onClick={() => setActiveSection('Apparence')}>Apparence</li>
+          <li className={`py-2 ${activeSection === 'Traductions' ? 'text-blue-500' : ''}`} onClick={() => setActiveSection('Traductions')}>Traductions</li>
+          <li className={`py-2 ${activeSection === 'Messages' ? 'text-blue-500' : ''}`} onClick={() => setActiveSection('Messages')}>Messages</li>
+        </ul>
+      </div>
+
+      {/* Contenu Principal */}
+      <div className="flex-1 p-8 overflow-auto">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-bold">{activeSection}</h1>
+          <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            + Nouvelle section
           </button>
-          {isSidebarVisible && (
-            <div
-              className="absolute left-0 mt-2 w-64 bg-gradient-to-r from-green-200 to-white shadow-lg rounded-lg p-4"
-              onMouseEnter={() => setIsSidebarVisible(true)}
-              onMouseLeave={() => setIsSidebarVisible(false)}
-            >
-              <h2 className="text-xl font-bold mb-4">DASHBOARD</h2>
-              <ul>
-                <li className="py-2">Sections</li>
-                <li className="py-2">Images</li>
-                <li className="py-2">Apparence</li>
-                <li className="py-2">Traductions</li>
-                <li className="py-2">Messages</li>
-              </ul>
-            </div>
-          )}
         </div>
-        <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-          + Nouvelle section
-        </button>
+        <div className="space-y-4">
+          {sections.map((section, i) => (
+            <SectionCard key={i} {...section} />
+          ))}
+        </div>
       </div>
-      <div className="space-y-4">
-        {sections.map((section, i) => (
-          <SectionCard key={i} {...section} />
-        ))}
-      </div>
-    </div>
     </div>
   );
 };
