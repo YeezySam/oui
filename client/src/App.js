@@ -5,12 +5,14 @@ import DashboardNavbar from './DashboardNavbar';
 import LoginPage from './LoginPage';
 import Dashboard from './Dashboard';
 import AuthPage from './pages/AuthPage';
+import ModifyDesign from './ModifyDesign';
 
 function Layout() {
   return (
     <>
       <Routes>
         <Route path="/dashboard" element={<><DashboardNavbar /><Dashboard /></>} />
+         <Route path="/modify-design" element={<ModifyDesign />} />
         <Route path="/auth" element={<><Navbar /><AuthPage /></>} />
         <Route path="/" element={<><Navbar /><LoginPage /></>} />
       </Routes>
