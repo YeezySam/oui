@@ -45,7 +45,13 @@ const Dashboard = () => {
       description: "Change les couleurs, les polices, l'arrière-plan d'une section",
       onClick: () => navigate('/modify-design')
     },
-    { id: 2, icon: <FaFileAlt className="text-blue-500" />, title: "Gérer les contenus", description: "Ajoute ou édite les textes et titres de différentes sections" },
+        {
+      id: 2,
+      icon: <FaPaintBrush className="text-purple-500" />,
+      title: "Gerer le contenu",
+      description: "Ajoute ou édite les textes et titres de différentes sections",
+      onClick: () => navigate('./pages/ManageContents')
+    },
     { id: 3, icon: <FaImage className="text-green-500" />, title: "Gérer les images", description: "Upload de bannières, logos, illustrations d'une section" },
     { id: 4, icon: <FaPlus className="text-red-500" />, title: "Gérer les pages et sections", description: "Crée des pages et ajoute des sections" },
     { id: 5, icon: <FaPlus className="text-yellow-500" />, title: "Ajouter des blocs dynamiques", description: "Titre + image + paragraphe, ou bloc galerie, tableau, etc." },
@@ -60,7 +66,7 @@ const Dashboard = () => {
           <div className="flex items-center space-x-2">
             <FiMenu className="text-2xl cursor-pointer" onClick={toggleSidebar} />
             <img src="/images/armoiries_logo_cenadi.png" alt="Logo" className="h-10" />
-            <span className="text-xl font-bold">GOV-AI</span>
+            <span className="text-xl font-bold">GOV-AI_Admin</span>
           </div>
           <div className="flex items-center space-x-4">
             <FiBell className="text-xl cursor-pointer" />

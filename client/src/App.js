@@ -6,15 +6,33 @@ import LoginPage from './LoginPage';
 import Dashboard from './Dashboard';
 import AuthPage from './pages/AuthPage';
 import ModifyDesign from './ModifyDesign';
+import  NavbarModify from'./NavbarModify';
+import HeaderModify from './HeaderModify';
+import BodyModify from "./BodyModify";
+import FooterModify from "./FooterModify";
+import ManageContents from './pages/ManageContents';
+import  Articles from'./pages/Articles';
+
+
 
 function Layout() {
   return (
     <>
       <Routes>
         <Route path="/dashboard" element={<><DashboardNavbar /><Dashboard /></>} />
-         <Route path="/modify-design" element={<ModifyDesign />} />
+        <Route path="/modify-design" element={<ModifyDesign />} />
         <Route path="/auth" element={<><Navbar /><AuthPage /></>} />
         <Route path="/" element={<><Navbar /><LoginPage /></>} />
+        <Route path="/navbar-modify" element={<NavbarModify />} />
+        <Route path="header-modify" element={<HeaderModify/>}/>
+        <Route path="/body-modify" element={<BodyModify />} />
+        <Route path="/footer-modify" element={<FooterModify/>}/>
+        <Route path="/dashboard/pages/ManageContents" element={<><DashboardNavbar /><ManageContents /></>} />
+        <Route path="/dashboard/pages/ManageContents/Articles" element={<><DashboardNavbar /><Articles /></>} />
+        
+        <Route path="/Article" element={<Articles />} />
+
+
       </Routes>
     </>
   );
